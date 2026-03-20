@@ -56,7 +56,10 @@ app.get("/status", (req, res) => {
 
 const twilio = require("twilio");
 
-const client = twilio("YOUR_SID", "YOUR_AUTH_TOKEN");
+const client = twilio(
+  process.env.TWILIO_SID,
+  process.env.TWILIO_TOKEN
+);
 
 // inside serve-next API
 client.messages.create({
@@ -77,6 +80,6 @@ app.get("/predict", (req, res) => {
   res.send({ crowd });
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
