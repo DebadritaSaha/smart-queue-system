@@ -1,25 +1,80 @@
-.container {
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.card {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   text-align: center;
-  margin-top: 80px;
-  font-family: Arial;
 }
 
 input {
-  display: block;
-  margin: 10px auto;
-  padding: 10px;
-  width: 250px;
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 button {
-  padding: 10px 20px;
-  background: blue;
+  background-color: #007bff;
   color: white;
   border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
+  font-size: 16px;
+  transition: background 0.3s;
 }
 
-h1 {
-  color: #222;
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Display Screen (The Big TV Look) */
+.display-screen {
+  height: 100vh;
+  background-color: #1a1a1a;
+  color: #00ffcc; /* Neon Green Digital Look */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.big-token {
+  font-size: 250px;
+  font-weight: bold;
+  text-shadow: 0 0 20px #00ffcc;
+  margin: 20px 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Admin Panel */
+.admin-card {
+  border-top: 5px solid #ff4757;
+}
+
+.admin-btn {
+  background-color: #ff4757;
+  font-weight: bold;
+}
+
+.admin-btn:hover {
+  background-color: #e84118;
+}
+
+.token-number {
+  font-size: 48px;
+  color: #2f3542;
 }

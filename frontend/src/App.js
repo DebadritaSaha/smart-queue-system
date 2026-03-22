@@ -1,15 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home"; // 👈 This line is the secret! It connects your files.
-
-// Keep Admin and Display as they are for now
-function Admin() {
-  return <h1>Admin Page</h1>;
-}
-
-function Display() {
-  return <h1>Display Page</h1>;
-}
+import Home from "./Home";
+import Admin from "./Admin"; // 👈 Add this
+import Display from "./Display"; // 👈 Add this
 
 function App() {
   return (
