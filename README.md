@@ -35,6 +35,6 @@ This application utilizes a decoupled Client-Server architecture:
 
 To run this project on your own machine:
 
-1. **Clone the repository:**
+1. ## Clone the repository:
    ```bash
    git clone [https://github.com/DebadritaSaha/smart-queue-system.git](https://github.com/DebadritaSaha/smart-queue-system.git)
