@@ -15,16 +15,37 @@ function Admin() {
     }
   };
 
+  const resetQueue = async () => {
+    if (window.confirm("Are you sure you want to reset the entire queue?")) {
+      const res = await fetch(`${API_URL}/reset`, { method: "POST" });
+      const data = await res.json();
+      setServedToken(null);
+      alert(data.message);
+    }
+  };
+
   return (
-    <div className="card admin-card">
-      <h1>👨‍💼 Admin Panel</h1>
-      <button className="admin-btn" onClick={serveNext}>Serve Next Customer</button>
-      {servedToken && (
-        <div className="now-serving">
-          <p>Now Serving Token:</p>
-          <h2 className="token-number">{servedToken}</h2>
+    <div className="home-container">
+      <div className="admin-card">
+        
+        {/* Header with Title on Left, Reset on Right */}
+        <div className="card-header">
+          <h1 style={{ marginBottom: 0 }}>👨‍💼 Admin</h1>
+          <button className="reset-btn" onClick={resetQueue}>Reset Queue</button>
         </div>
-      )}
+
+        <button className="admin-btn" onClick={serveNext}>Serve Next Customer</button>
+        
+        {servedToken && (
+          <div className="live-status" style={{ flexDirection: 'column', marginTop: '30px' }}>
+            <div className="status-box">
+              <p>Now Serving Token</p>
+              <h3 style={{ fontSize: '48px', color: '#8ec5fc' }}>{servedToken}</h3>
+            </div>
+          </div>
+        )}
+
+      </div>
     </div>
   );
 }

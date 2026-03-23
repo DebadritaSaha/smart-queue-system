@@ -171,3 +171,20 @@ button:hover, .primary-btn:hover, .admin-btn:hover {
 .crowd-badge.low { background: #dff9fb; color: #16a085; }
 .crowd-badge.medium { background: #fef1e6; color: #e67e22; }
 .crowd-badge.high { background: #ffefef; color: #e74c3c; }
+
+/* Small Reset Button on the Right */
+.reset-btn {
+  width: auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  background: #ff9a9e; /* Soft pastel red */
+  margin-top: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 154, 158, 0.3);
+}
+
+.reset-btn:hover {
+  background: #ff878c;
+  box-shadow: 0 6px 15px rgba(255, 154, 158, 0.5);
+  transform: translateY(-2px);
+}

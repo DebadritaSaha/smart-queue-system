@@ -1,18 +1,18 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"; // Added Link
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Admin from "./Admin";
 import Display from "./Display";
-import './App.css';
+import './App.css'; // This brings in your pastel design!
 
 function App() {
   return (
     <BrowserRouter>
-      {/* Simple Navigation Bar */}
-      <nav style={{ padding: "10px", textAlign: "center", background: "#fff", marginBottom: "20px" }}>
-        <Link to="/" style={{ margin: "10px" }}>Book Token</Link>
-        <Link to="/admin" style={{ margin: "10px" }}>Admin</Link>
-        <Link to="/display" style={{ margin: "10px" }}>Display</Link>
+      {/* Cleaned up nav - no more inline styles! */}
+      <nav>
+        <Link to="/">Book Token</Link>
+        <Link to="/admin">Admin</Link>
+        <Link to="/display">Display</Link>
       </nav>
 
       <Routes>
