@@ -1,70 +1,65 @@
-/* Global Modern Reset */
+/* Import a soft, rounded font to match the pastel vibe */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+/* Global Pastel Background */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-  color: #2d3436;
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); /* Soft lavender to baby blue */
+  color: #4a4e69; /* Soft navy-grey instead of harsh black */
   min-height: 100vh;
 }
 
+/* Navigation Bar */
 nav {
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   padding: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
+  margin-bottom: 20px;
 }
 
 nav a {
   text-decoration: none;
-  color: #636e72;
-  font-weight: 600;
-  transition: color 0.2s;
+  color: #4a4e69;
+  font-weight: 800;
+  font-size: 16px;
+  transition: color 0.3s;
 }
 
-nav a:hover { color: #0984e3; }
+nav a:hover { color: #8ec5fc; }
 
-/* Premium Card Layout */
+/* =========================================
+   THE UNIFIED BOX (Applies to all pages)
+   ========================================= */
 .home-container {
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 20px;
 }
 
-.premium-card {
-  background: white;
+.premium-card, .card, .admin-card, .display-screen {
+  background: #ffffff;
   width: 100%;
-  max-width: 420px;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  border: 1px solid rgba(255,255,255,0.8);
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 40px 30px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(142, 197, 252, 0.25); /* Soft blue shadow */
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  text-align: center;
+  box-sizing: border-box;
 }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
+/* Headers inside the boxes */
+h1, h2 {
+  color: #4a4e69;
+  margin-top: 0;
 }
-
-.card-header h1 {
-  margin: 0;
-  font-size: 24px;
-  color: #2d3436;
-}
-
-.crowd-badge {
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.crowd-badge.low { background: #dff9fb; color: #16a085; }
-.crowd-badge.medium { background: #fef1e6; color: #e67e22; }
-.crowd-badge.high { background: #ffefef; color: #e74c3c; }
 
 /* Inputs */
 .input-group {
@@ -74,102 +69,105 @@ nav a:hover { color: #0984e3; }
 
 .input-group label {
   display: block;
-  font-size: 13px;
-  color: #636e72;
+  font-size: 14px;
+  color: #9fa8da;
   margin-bottom: 8px;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 input {
   width: 100%;
-  padding: 14px 16px;
-  border: 2px solid #f1f2f6;
-  border-radius: 12px;
+  padding: 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
   font-size: 16px;
+  background: #f8fafc;
+  color: #4a4e69;
   box-sizing: border-box;
-  transition: border-color 0.3s;
+  transition: all 0.3s ease;
+  font-family: 'Nunito', sans-serif;
 }
 
 input:focus {
   outline: none;
-  border-color: #0984e3;
+  border-color: #8ec5fc;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(142, 197, 252, 0.2);
 }
 
-/* Buttons */
-.primary-btn {
+/* Buttons (Pastel colored) */
+button, .primary-btn, .admin-btn {
   width: 100%;
-  background: #0984e3;
-  color: white;
+  background: #ffb7b2; /* Pastel warm pink */
+  color: #ffffff;
   padding: 16px;
   border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 8px 15px rgba(9, 132, 227, 0.3);
-  transition: transform 0.2s, background 0.2s;
-  margin-top: 10px;
-}
-
-.primary-btn:hover {
-  background: #074b83;
-  transform: translateY(-2px);
-}
-
-/* The Ticket UI */
-.ticket-card {
-  text-align: center;
-  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
-}
-
-.ticket-number {
-  background: #0984e3;
-  color: white;
-  padding: 30px;
   border-radius: 16px;
-  margin: 20px 0;
-  box-shadow: 0 10px 20px rgba(9, 132, 227, 0.2);
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(255, 183, 178, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 15px;
+  font-family: 'Nunito', sans-serif;
 }
 
-.ticket-number span { font-size: 14px; opacity: 0.9; }
-.ticket-number h1 { margin: 5px 0 0; font-size: 64px; }
+button:hover, .primary-btn:hover, .admin-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(255, 183, 178, 0.6);
+}
 
+/* Admin Specific Overrides */
+.admin-btn { background: #a1c4fd; box-shadow: 0 8px 15px rgba(161, 196, 253, 0.4); }
+.admin-btn:hover { box-shadow: 0 12px 20px rgba(161, 196, 253, 0.6); }
+
+/* The Big Ticket & Display Screen Text */
+.big-token, .ticket-number h1 {
+  font-size: 100px;
+  font-weight: 800;
+  color: #8ec5fc; /* Pastel blue text */
+  margin: 10px 0;
+  line-height: 1;
+}
+
+/* Live Status Boxes (Home Page) */
 .live-status {
   display: flex;
   gap: 15px;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .status-box {
   flex: 1;
-  background: #f1f2f6;
+  background: #fdfbfb;
   padding: 15px;
-  border-radius: 12px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
 }
 
-.status-box p { margin: 0; font-size: 12px; color: #636e72; }
-.status-box h3 { margin: 5px 0 0; color: #2d3436; font-size: 20px; }
-
-.subtext { font-size: 12px; color: #b2bec3; }
+.status-box p { margin: 0; font-size: 13px; color: #9fa8da; font-weight: 600; }
+.status-box h3 { margin: 5px 0 0; color: #4a4e69; font-size: 22px; }
 
 /* Pulse Animation for "Your Turn" */
 .turn-alert {
   width: 100%;
-  background: #00b894;
-  color: white;
+  background: #a8e6cf; /* Pastel mint green */
+  color: #2d6a4f;
   padding: 15px;
-  border-radius: 12px;
-  font-weight: bold;
+  border-radius: 16px;
+  font-weight: 800;
+  box-sizing: border-box;
 }
+
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.7); }
-  70% { box-shadow: 0 0 0 15px rgba(0, 184, 148, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 184, 148, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(168, 230, 207, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(168, 230, 207, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(168, 230, 207, 0); }
 }
 .pulse { animation: pulse 2s infinite; }
 
-/* Keep Admin and Display styles mostly the same, just tweak to match new font */
-.display-screen { height: 90vh; background-color: #111; color: #00ffcc; display: flex; flex-direction: column; justify-content: center; align-items: center; text-transform: uppercase; }
-.big-token { font-size: 250px; font-weight: bold; text-shadow: 0 0 20px #00ffcc; margin: 20px 0; font-family: monospace; }
-.admin-card { max-width: 400px; margin: 50px auto; padding: 30px; background: white; border-radius: 15px; text-align: center; border-top: 5px solid #d63031; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-.admin-btn { background-color: #d63031; color: white; padding: 15px 30px; border: none; border-radius: 12px; cursor: pointer; font-size: 18px; font-weight: bold; width: 100%; margin-bottom: 20px; }
+/* Crowd Badges */
+.crowd-badge { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 800; text-transform: uppercase; }
+.crowd-badge.low { background: #dff9fb; color: #16a085; }
+.crowd-badge.medium { background: #fef1e6; color: #e67e22; }
+.crowd-badge.high { background: #ffefef; color: #e74c3c; }
