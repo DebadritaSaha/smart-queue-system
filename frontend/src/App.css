@@ -1,80 +1,175 @@
-/* Global Styles */
+/* Global Modern Reset */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f2f5;
-  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  color: #2d3436;
+  min-height: 100vh;
 }
 
-.card {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 30px;
+nav {
   background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  text-align: center;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #636e72;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: #0984e3; }
+
+/* Premium Card Layout */
+.home-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.premium-card {
+  background: white;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.8);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.card-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #2d3436;
+}
+
+.crowd-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.crowd-badge.low { background: #dff9fb; color: #16a085; }
+.crowd-badge.medium { background: #fef1e6; color: #e67e22; }
+.crowd-badge.high { background: #ffefef; color: #e74c3c; }
+
+/* Inputs */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  color: #636e72;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 input {
-  width: 80%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #f1f2f6;
+  border-radius: 12px;
   font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
 }
 
-button {
-  background-color: #007bff;
+input:focus {
+  outline: none;
+  border-color: #0984e3;
+}
+
+/* Buttons */
+.primary-btn {
+  width: 100%;
+  background: #0984e3;
   color: white;
+  padding: 16px;
   border: none;
-  padding: 12px 25px;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 12px;
   font-size: 16px;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-/* Display Screen (The Big TV Look) */
-.display-screen {
-  height: 100vh;
-  background-color: #1a1a1a;
-  color: #00ffcc; /* Neon Green Digital Look */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-}
-
-.big-token {
-  font-size: 250px;
   font-weight: bold;
-  text-shadow: 0 0 20px #00ffcc;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(9, 132, 227, 0.3);
+  transition: transform 0.2s, background 0.2s;
+  margin-top: 10px;
+}
+
+.primary-btn:hover {
+  background: #074b83;
+  transform: translateY(-2px);
+}
+
+/* The Ticket UI */
+.ticket-card {
+  text-align: center;
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+.ticket-number {
+  background: #0984e3;
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
   margin: 20px 0;
-  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 10px 20px rgba(9, 132, 227, 0.2);
 }
 
-/* Admin Panel */
-.admin-card {
-  border-top: 5px solid #ff4757;
+.ticket-number span { font-size: 14px; opacity: 0.9; }
+.ticket-number h1 { margin: 5px 0 0; font-size: 64px; }
+
+.live-status {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-.admin-btn {
-  background-color: #ff4757;
+.status-box {
+  flex: 1;
+  background: #f1f2f6;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.status-box p { margin: 0; font-size: 12px; color: #636e72; }
+.status-box h3 { margin: 5px 0 0; color: #2d3436; font-size: 20px; }
+
+.subtext { font-size: 12px; color: #b2bec3; }
+
+/* Pulse Animation for "Your Turn" */
+.turn-alert {
+  width: 100%;
+  background: #00b894;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
   font-weight: bold;
 }
-
-.admin-btn:hover {
-  background-color: #e84118;
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(0, 184, 148, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 184, 148, 0); }
 }
+.pulse { animation: pulse 2s infinite; }
 
-.token-number {
-  font-size: 48px;
-  color: #2f3542;
-}
+/* Keep Admin and Display styles mostly the same, just tweak to match new font */
+.display-screen { height: 90vh; background-color: #111; color: #00ffcc; display: flex; flex-direction: column; justify-content: center; align-items: center; text-transform: uppercase; }
+.big-token { font-size: 250px; font-weight: bold; text-shadow: 0 0 20px #00ffcc; margin: 20px 0; font-family: monospace; }
+.admin-card { max-width: 400px; margin: 50px auto; padding: 30px; background: white; border-radius: 15px; text-align: center; border-top: 5px solid #d63031; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.admin-btn { background-color: #d63031; color: white; padding: 15px 30px; border: none; border-radius: 12px; cursor: pointer; font-size: 18px; font-weight: bold; width: 100%; margin-bottom: 20px; }
